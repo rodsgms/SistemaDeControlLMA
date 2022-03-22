@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1091249682860",
+    "project_id": "control-lma",
+    "storage_bucket": "control-lma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091249682860:android:4d9fff73ca645cc2ea2209",
+        "android_client_info": {
+          "package_name": "com.sistemaasistenciaycomunicados"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091249682860-pf258igad6u36jsaoj51h1hdpmlb54ms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7w4FYitoOA_GZAra8gM8uFJeK9PHXj6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091249682860-pf258igad6u36jsaoj51h1hdpmlb54ms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
