@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -49,16 +51,14 @@ class LoginActivity : AppCompatActivity() {
                 password.error = null
 
 
-                auth.signInWithEmailAndPassword(email.editText?.text.toString(), password.editText?.text.toString())
+                auth.signInWithEmailAndPassword(email.editText?.text.toString().trim(), password.editText?.text.toString())
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-//                            val user = auth.currentUser
-//                            updateUI(user)
                             startActivity(Intent(this, MainActivity::class.java))
                         } else {
                             Toast.makeText(
                                 baseContext,
-                                "Authentication failed.",
+                                "Authentication failed." + task.getResult().toString(),
                                 Toast.LENGTH_SHORT
                             ).show()
                         }

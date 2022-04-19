@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_bottom_view"
+    app:startDestination="@id/navigation_notifications">
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.sistemaasistenciaycomunicados.fragment.notification.FragmentNotification"
+        android:label="@string/navigation_title_notifications"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.sistemaasistenciaycomunicados.fragment.profile.FragmentProfile"
+        android:label="@string/navigation_title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

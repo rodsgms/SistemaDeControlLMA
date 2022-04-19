@@ -16,10 +16,16 @@
     <string name="login_failed">"Login failed"</string>
 
 
+    <!--    login-->
     <string name="login_email">Correo</string>
     <string name="login_btn_login">Iniciar sesion</string>
     <string name="login_password">Contraseña</string>
     <string name="field_requiered">Campo requerido</string>
     <string name="main_btn_create">Publicar</string>
+
+    <!--    navigation titles-->
+    <string name="navigation_title_notifications">Comunicados</string>
+    <string name="navigation_title_profile">Perfil</string>
+
 
 </resources>
