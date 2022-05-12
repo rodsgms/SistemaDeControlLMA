@@ -14,9 +14,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import com.sistemaasistenciaycomunicados.fragment.FragmentNotification;
-import com.sistemaasistenciaycomunicados.fragment.profile.FragmentProfile;
+import com.sistemaasistenciaycomunicados.fragment.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.menu_bottom_nav_notification) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FragmentNotification()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
                 } else if (item.getItemId() == R.id.menu_bottom_nav_profile) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FragmentProfile()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new ProfileFragment()).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
                 }
                 return true;
             }

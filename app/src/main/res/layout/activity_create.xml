@@ -13,7 +13,7 @@
         android:layout_height="200dp"
         android:autofillHints=""
         android:gravity="start|top"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

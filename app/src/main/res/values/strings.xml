@@ -3,18 +3,6 @@
     <string name="menu_notification">Comunicados</string>
     <string name="menu_profile">Asistencia</string>
     <string name="image_description">Image</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-
 
     <!--    login-->
     <string name="login_email">Correo</string>
@@ -22,6 +10,17 @@
     <string name="login_password">Contraseña</string>
     <string name="field_requiered">Campo requerido</string>
     <string name="main_btn_create">Publicar</string>
+
+<!--    profile-->
+    <string name="profile_btn_present">Asistencia</string>
+    <string name="profile_name">Nombre</string>
+
+    <string name="profile_al_title_name">Nombre: </string>
+    <string name="profile_msg_empty_name">Agrega tu nombre para poder tomar asistencia</string>
+
+    <string name="profile_input_name">Nombre</string>
+
+    <string name="profile_input_name_msg_empty">Agrega tu nombre</string>
 
     <!--    navigation titles-->
     <string name="navigation_title_notifications">Comunicados</string>

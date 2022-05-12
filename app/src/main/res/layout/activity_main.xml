@@ -19,9 +19,9 @@
         android:layout_above="@id/main_bottom_view"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:visibility="gone"
         android:contentDescription="@string/image_description"
-        android:src="@drawable/ic_baseline_create_24" />
+        android:src="@drawable/ic_baseline_create_24"
+        android:visibility="gone" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_bottom_view"

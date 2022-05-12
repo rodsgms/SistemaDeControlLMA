@@ -1,48 +1,54 @@
 package com.sistemaasistenciaycomunicados;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.sistemaasistenciaycomunicados.info.InfoMy;
+import com.sistemaasistenciaycomunicados.info.Comunicado;
 
-import java.util.HashMap;
+import java.text.DateFormat;
+import java.util.Date;
 
 public class CreateActivity extends AppCompatActivity {
 
     private EditText inputText;
+    private Date date;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
         inputText = findViewById(R.id.create_et);
-        Button btnCreate =findViewById(R.id.create_btn);
+        Button btnCreate = findViewById(R.id.create_btn);
+        date = new Date();
 
         btnCreate.setOnClickListener(v -> addNewInfo());
     }
 
     private void addNewInfo() {
         String txtInfo = inputText.getText().toString();
-        if (!txtInfo.isEmpty()){
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Info");
-            String infoKey = reference.push().getKey();
+        if (!txtInfo.isEmpty()) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comunicados");
+            String txtPostKey = reference.push().getKey();
 
-            InfoMy infoMy = new InfoMy();
-            infoMy.setText(txtInfo);
-            infoMy.setIdITem(infoKey);
+            String txtToday = DateFormat.getInstance().format(date);
 
-            reference.child(infoKey).setValue(infoKey).addOnCompleteListener(new OnCompleteListener<Void>() {
+            Comunicado comunicado = new Comunicado();
+            comunicado.setText(txtInfo);
+            comunicado.setIdITem(txtPostKey);
+            comunicado.setDate(txtToday);
+
+            reference.child(txtPostKey).setValue(comunicado).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {

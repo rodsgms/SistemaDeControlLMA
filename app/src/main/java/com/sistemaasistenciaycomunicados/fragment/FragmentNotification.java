@@ -2,15 +2,14 @@ package com.sistemaasistenciaycomunicados.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,17 +17,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.sistemaasistenciaycomunicados.R;
-import com.sistemaasistenciaycomunicados.info.InfoAdapter;
-import com.sistemaasistenciaycomunicados.info.InfoMy;
+import com.sistemaasistenciaycomunicados.info.Comunicado;
+import com.sistemaasistenciaycomunicados.info.ComunicadoAdapter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class FragmentNotification extends Fragment {
 
 
-    private InfoAdapter infoAdapter;
-    private List<InfoMy> infoMyList;
+    private ComunicadoAdapter comunicadoAdapter;
+    private List<Comunicado> comunicadoList;
+
     public FragmentNotification() {
         // Required empty public constructor
     }
@@ -40,12 +41,12 @@ public class FragmentNotification extends Fragment {
         View view = inflater.inflate(R.layout.fragment_notification2, container, false);
 
         RecyclerView recyclerView = view.findViewById(R.id.notification_rv);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
 
-        infoMyList =  new ArrayList<>();
-        infoAdapter = new InfoAdapter(getContext(), infoMyList);
-        recyclerView.setAdapter(infoAdapter);
+        comunicadoList = new ArrayList<>();
+        comunicadoAdapter = new ComunicadoAdapter(getContext(), comunicadoList);
+        recyclerView.setAdapter(comunicadoAdapter);
 
         getAllInfo();
 
@@ -53,17 +54,18 @@ public class FragmentNotification extends Fragment {
     }
 
     private void getAllInfo() {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Info");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comunicados");
         reference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                infoMyList.clear();
-                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    InfoMy infoMy = dataSnapshot.getValue(InfoMy.class);
-                    infoMyList.add(infoMy);
+                comunicadoList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Comunicado comunicado = dataSnapshot.getValue(Comunicado.class);
+                    comunicadoList.add(comunicado);
                 }
-                infoAdapter.notifyDataSetChanged();
+                Collections.reverse(comunicadoList);
+                comunicadoAdapter.notifyDataSetChanged();
             }
 
             @Override

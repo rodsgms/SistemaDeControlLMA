@@ -13,13 +13,13 @@ import com.sistemaasistenciaycomunicados.R;
 
 import java.util.List;
 
-public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
+public class ComunicadoAdapter extends RecyclerView.Adapter<ComunicadoAdapter.ViewHolder> {
     private final Context context;
-    private final List<InfoMy> infoMyList;
+    private final List<Comunicado> comunicadoList;
 
-    public InfoAdapter(Context context, List<InfoMy> infoMyList) {
+    public ComunicadoAdapter(Context context, List<Comunicado> comunicadoList) {
         this.context = context;
-        this.infoMyList = infoMyList;
+        this.comunicadoList = comunicadoList;
     }
 
     @NonNull
@@ -31,22 +31,26 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        InfoMy infoMy = infoMyList.get(position);
+        Comunicado comunicado = comunicadoList.get(position);
 
-        holder.tvText.setText(infoMy.getText());
+        holder.tvText.setText(comunicado.getText());
+        holder.tvDate.setText(comunicado.getDate());
+        holder.tvUsername.setText("Recursos humanos");
     }
 
     @Override
     public int getItemCount() {
-        return infoMyList.size();
+        return comunicadoList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvText;
+        public TextView tvText, tvDate, tvUsername;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvText = itemView.findViewById(R.id.item_info_tv_text);
+            tvDate = itemView.findViewById(R.id.item_info_tv_date);
+            tvUsername = itemView.findViewById(R.id.item_info_tv_username);
         }
     }
 }

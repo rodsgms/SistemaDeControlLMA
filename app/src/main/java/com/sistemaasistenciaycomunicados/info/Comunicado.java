@@ -1,12 +1,11 @@
 package com.sistemaasistenciaycomunicados.info;
 
-public class InfoMy {
+public class Comunicado {
     private String text;
     private String date;
-    private String time;
     private String idITem;
 
-    public InfoMy() {
+    public Comunicado() {
     }
 
     public String getText() {
@@ -23,14 +22,6 @@ public class InfoMy {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public String getIdITem() {

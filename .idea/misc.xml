@@ -11,7 +11,9 @@
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.178125" />
         <entry key="app/src/main/res/layout/fragment_notification2.xml" value="0.1015625" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.178125" />
-        <entry key="app/src/main/res/layout/item_info.xml" value="0.11861313868613138" />
+        <entry key="app/src/main/res/layout/fragment_profile2.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_info.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_input_name.xml" value="0.33" />
         <entry key="app/src/main/res/menu/menu_bottom_nav.xml" value="0.19375" />
       </map>
     </option>
