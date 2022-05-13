@@ -1,6 +1,7 @@
 package com.sistemaasistenciaycomunicados;
 
 import android.content.Intent;
+import android.hardware.biometrics.BiometricManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;

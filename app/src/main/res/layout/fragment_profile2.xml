@@ -43,7 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
         android:text="@string/profile_btn_present"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_x_view" />

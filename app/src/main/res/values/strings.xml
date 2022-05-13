@@ -19,6 +19,14 @@
     <string name="profile_msg_empty_name">Agrega tu nombre para poder tomar asistencia</string>
 
     <string name="profile_input_name">Nombre</string>
+    <string name="profile_input_present">PRESENTE</string>
+    <string name="profile_input_present_title">Escribe: </string>
+    <string name="profile_input_present_title_msg_not_list_finger">No tienes registrado ninguna huella</string>
+
+    <string name="profile_input_present_msg_present">Asistencia confirmada</string>
+    <string name="profile_input_present_msg_present_not_present">Asistencia aun no confirmada</string>
+    <string name="profile_input_finger_sensor_title">Coloca tu huella para confirmar asistencia</string>
+    <string name="profile_input_finger_sensor_negative_cancel">Cancelar</string>
 
     <string name="profile_input_name_msg_empty">Agrega tu nombre</string>
 
